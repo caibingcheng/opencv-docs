@@ -114,6 +114,8 @@ int main( int argc, char** argv ){
   else
     boundingBox = selectROI("Tracking API", image);
 
+  cout << boundingBox << endl;
+
   imshow( "Tracking API", image );
 
   bool initialized = false;

@@ -6,6 +6,8 @@
 inline cv::Ptr<cv::Tracker> createTrackerByName(cv::String name)
 {
     cv::Ptr<cv::Tracker> tracker;
+    // cv::TrackerKCF::Params para;
+    // tracker.create(para);
     if (name == "KCF")
         tracker = cv::TrackerKCF::create();
     else if (name == "TLD")

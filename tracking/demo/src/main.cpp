@@ -93,7 +93,79 @@ int main( int argc, char** argv ){
   bool paused = false;
 
   //instantiates the specific Tracker
-  Ptr<Tracker> tracker = createTrackerByName(tracker_algorithm);
+  //Ptr<Tracker> tracker = createTrackerByName(tracker_algorithm);
+
+  // cv::TrackerBoosting::Params params;
+  // // params.iterationInit = 50;
+  // // params.numClassifiers = 200;
+  // // params.samplerOverlap = 50;
+  // params.samplerSearchFactor = 50;
+  // Ptr<TrackerBoosting> tracker = cv::TrackerBoosting::create(params);
+ 
+  cv::TrackerCSRT::Params params;
+  params.window_function = "hann";
+  params.use_channel_weights = true;
+  params.use_color_names = true;
+  params.use_gray = true;
+  params.use_hog = true;
+  params.use_rgb = true;
+  params.use_segmentation = true;
+  // params.admm_iterations = 100;
+  // params.background_ratio = 100;
+  // params.cheb_attenuation = 10;
+  // params.filter_lr = 1.5;
+  // params.gsl_sigma = 8;
+  // params.histogram_bins = 100;
+  // params.histogram_lr = 10;
+  // params.hog_clip = 10;
+  // params.hog_orientations = 100;
+  // params.kaiser_alpha = 100;
+  // params.num_hog_channels_used = 10;
+  // params.number_of_scales = 100;
+  // params.padding = 10;
+  // params.scale_lr = 1;
+  // params.scale_model_max_area = 30;
+  // params.scale_sigma_factor = 0.1;
+  // params.scale_step = 10;
+  // params.template_size = 100;
+  Ptr<TrackerCSRT> tracker = cv::TrackerCSRT::create(params);
+
+  // cv::TrackerKCF::Params params;
+  // // params.compress_feature = true;
+  // // params.compressed_size = 10;
+  // // params.pca_learning_rate = 0.9;
+  // // params.resize = false;
+  // // params.desc_pca = cv::TrackerKCF::CN;
+  // // params.detect_thresh = 0.5;
+  // // params.lambda = 0.2;
+  // // params.sigma = 1.5;
+  // // params.split_coeff = true;
+  // // params.wrap_kernel = true;
+  // // params.interp_factor = 10.5;
+  // // params.max_patch_size = 100;
+  // // params.output_sigma_factor = 0.4;
+  // Ptr<TrackerKCF> tracker = cv::TrackerKCF::create(params);
+
+
+  // cv::TrackerMedianFlow::Params params;
+  // params.maxLevel = 10;
+  // params.maxMedianLengthOfDisplacementDifference = 10.0;
+  // params.pointsInGrid = 10;
+  // params.winSize = cv::Size(10,10);
+  // params.winSizeNCC = cv::Size(10,10);
+  // Ptr<TrackerMedianFlow> tracker = cv::TrackerMedianFlow::create(params);
+
+
+  // cv::TrackerMIL::Params params;
+  // // params.featureSetNumFeatures = 100;
+  // params.samplerInitInRadius = 5.0;
+  // params.samplerInitMaxNegNum = 50;
+  // params.samplerSearchWinSize = 10.0;
+  // params.samplerTrackInRadius = 10.0;
+  // params.samplerTrackMaxNegNum = 100;
+  // params.samplerTrackMaxPosNum = 1;
+  // Ptr<TrackerMIL> tracker = cv::TrackerMIL::create(params);
+
   if( tracker == NULL )
   {
     cout << "***Error in the instantiation of the tracker...***\n";

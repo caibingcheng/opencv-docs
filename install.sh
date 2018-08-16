@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "running this shell script will install some tools on your machine."
+echo "-- Warnning: running this shell script will install some tools on your machine."
 
 read -p "continue?[y/n]"  continue_flag
 
@@ -9,3 +9,9 @@ then
     exit 0
 fi
 
+echo "-- Installing: cbuild"
+git clone https://github.com/caibingcheng/cbuild.git
+cd ./cbuild
+sh install.sh -f
+cd ..
+rm -r ./cbuild

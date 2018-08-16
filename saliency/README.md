@@ -1,12 +1,11 @@
 # 结构：
 
-- demo： 存放示例代码，及代码需求的资源
+- demo： 存放示例代码（包括Python接口的demo）
   - bin：可执行文件
   - build：编译中间文件
   - include：头文件
   - lib：依赖库
-  - src：源文件(*.cpp)
-  - static：资源文件，包括视频或图片
+  - src：源文件(*.cpp)\Python接口的demo
 - docs：存放文档
   - introductions：模块说明部分，可能包括但不限于算法思想及流程、API说明、使用注意、API使用demo伪代码
   - papers：模块涉及的论文

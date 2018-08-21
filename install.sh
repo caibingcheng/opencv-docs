@@ -1,17 +1,17 @@
 #!/bin/sh
 
-echo "-- Warnning: running this shell script will install some tools on your machine."
+read -p "-- Warnning: some tools will be installed. continue?[y/n]"  continue_flag
 
-read -p "continue?[y/n]"  continue_flag
-
-if [ "$continue_flag"="n" -o "$continue_flag"="N" ]
+if [ "n" = $continue_flag ]#-o "$continue_flag"="N" ]
 then
     exit 0
 fi
 
 echo "-- Installing: cbuild"
-git clone https://github.com/caibingcheng/cbuild.git
+rm -fr ./cbuild
+git clone https://github.com/caibingcheng/cbuild.git --depth=1
 cd ./cbuild
-sh install.sh -f
+sh install.sh
 cd ..
-rm -r ./cbuild
+echo "-- Removing package."
+rm -fr ./cbuild

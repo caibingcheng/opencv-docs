@@ -7,7 +7,11 @@ ret, frame = cap.read()
 if not ret:
     exit(0)
 
-toner = cv2.bioinspired.RetinaFastToneMapping_create(frame.shape[0:2])
+size = list(frame.shape[0:2])
+[size[0], size[1]] = [size[1], size[0]]
+size = tuple(size)
+
+toner = cv2.bioinspired.RetinaFastToneMapping_create(size)
 
 while True:
     ret, frame = cap.read()
@@ -17,7 +21,7 @@ while True:
     toner.setup()
     toneImg = toner.applyFastToneMapping(frame)
 
-    cv2.imshow("tracker", frame)
+    cv2.imshow("tracker", toneImg)
 
     key = cv2.waitKey(10)
     if key == ord('q'):

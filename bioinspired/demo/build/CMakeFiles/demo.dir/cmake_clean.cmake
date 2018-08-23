@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/demo.dir/src/ToneMap.cpp.o"
+  "CMakeFiles/demo.dir/src/Retina.cpp.o"
   "../bin/demo.pdb"
   "../bin/demo"
 )

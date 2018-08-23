@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jerry/Documents/works/bioinspired/demo/src/ToneMap.cpp" "/home/jerry/Documents/works/bioinspired/demo/build/CMakeFiles/demo.dir/src/ToneMap.cpp.o"
+  "/home/jerry/Documents/works/bioinspired/demo/src/Retina.cpp" "/home/jerry/Documents/works/bioinspired/demo/build/CMakeFiles/demo.dir/src/Retina.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

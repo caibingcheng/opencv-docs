@@ -23,8 +23,11 @@ int main(int argc, char *argv[])
     cv::Mat inputFrame;
     cv::VideoCapture videoCapture; // in case a video media is used, its manager is declared here
 
-    videoCapture.open("../../../statics/video1.avi");
-    videoCapture >> inputFrame;
+    // videoCapture.open("../../../statics/video1.avi");
+    // videoCapture >> inputFrame;
+
+    inputFrame = cv::imread("../../../statics/candle.png");
+
 
     if (inputFrame.empty())
     {
@@ -42,10 +45,10 @@ int main(int argc, char *argv[])
 
         myRetina = cv::bioinspired::RetinaFastToneMapping::create(inputFrame.size());
 
-        myRetina->setup(
-            100,
-            100,
-            100);
+        // myRetina->setup(
+        //     100,
+        //     100,
+        //     100);
 
         // processing loop with stop condition
         int64 totalTime = 0;
@@ -54,11 +57,11 @@ int main(int argc, char *argv[])
         while (true)
         {
             // if using video stream, then, grabbing a new frame, else, input remains the same
-            if (videoCapture.isOpened())
-                videoCapture >> inputFrame;
-            if (inputFrame.empty())
-                break;
-            cvtColor(inputFrame, inputFrame, COLOR_BGR2GRAY);
+            // if (videoCapture.isOpened())
+            //     videoCapture >> inputFrame;
+            // if (inputFrame.empty())
+            //     break;
+            // cvtColor(inputFrame, inputFrame, COLOR_BGR2GRAY);
 
             // cv::Mat saturation;
             // run retina filter
@@ -73,10 +76,10 @@ int main(int argc, char *argv[])
             cv::imshow("Tone Map", toneMap);
             // cv::imshow("inputFrame", inputFrame);
 
-            cv::Scalar mean_map = cv::mean(toneMap);
-            const cv::Scalar test = cv::Scalar(0, 0, 0, 0);
-            if (test != mean_map)
-                std::cout << "nice!" << std::endl;
+            // cv::Scalar mean_map = cv::mean(toneMap);
+            // const cv::Scalar test = cv::Scalar(0, 0, 0, 0);
+            // if (test != mean_map)
+            //     std::cout << "nice!" << std::endl;
 
             int key = cv::waitKey(5);
             if (key == 'q')

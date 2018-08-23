@@ -57,38 +57,38 @@ include CMakeFiles/demo.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/demo.dir/flags.make
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.o: CMakeFiles/demo.dir/flags.make
-CMakeFiles/demo.dir/src/ToneMap.cpp.o: ../src/ToneMap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jerry/Documents/works/bioinspired/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo.dir/src/ToneMap.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/ToneMap.cpp.o -c /home/jerry/Documents/works/bioinspired/demo/src/ToneMap.cpp
+CMakeFiles/demo.dir/src/Retina.cpp.o: CMakeFiles/demo.dir/flags.make
+CMakeFiles/demo.dir/src/Retina.cpp.o: ../src/Retina.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jerry/Documents/works/bioinspired/demo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/demo.dir/src/Retina.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/src/Retina.cpp.o -c /home/jerry/Documents/works/bioinspired/demo/src/Retina.cpp
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/ToneMap.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jerry/Documents/works/bioinspired/demo/src/ToneMap.cpp > CMakeFiles/demo.dir/src/ToneMap.cpp.i
+CMakeFiles/demo.dir/src/Retina.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/src/Retina.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jerry/Documents/works/bioinspired/demo/src/Retina.cpp > CMakeFiles/demo.dir/src/Retina.cpp.i
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/ToneMap.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jerry/Documents/works/bioinspired/demo/src/ToneMap.cpp -o CMakeFiles/demo.dir/src/ToneMap.cpp.s
+CMakeFiles/demo.dir/src/Retina.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/src/Retina.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jerry/Documents/works/bioinspired/demo/src/Retina.cpp -o CMakeFiles/demo.dir/src/Retina.cpp.s
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.o.requires:
+CMakeFiles/demo.dir/src/Retina.cpp.o.requires:
 
-.PHONY : CMakeFiles/demo.dir/src/ToneMap.cpp.o.requires
+.PHONY : CMakeFiles/demo.dir/src/Retina.cpp.o.requires
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.o.provides: CMakeFiles/demo.dir/src/ToneMap.cpp.o.requires
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/ToneMap.cpp.o.provides.build
-.PHONY : CMakeFiles/demo.dir/src/ToneMap.cpp.o.provides
+CMakeFiles/demo.dir/src/Retina.cpp.o.provides: CMakeFiles/demo.dir/src/Retina.cpp.o.requires
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/Retina.cpp.o.provides.build
+.PHONY : CMakeFiles/demo.dir/src/Retina.cpp.o.provides
 
-CMakeFiles/demo.dir/src/ToneMap.cpp.o.provides.build: CMakeFiles/demo.dir/src/ToneMap.cpp.o
+CMakeFiles/demo.dir/src/Retina.cpp.o.provides.build: CMakeFiles/demo.dir/src/Retina.cpp.o
 
 
 # Object files for target demo
 demo_OBJECTS = \
-"CMakeFiles/demo.dir/src/ToneMap.cpp.o"
+"CMakeFiles/demo.dir/src/Retina.cpp.o"
 
 # External object files for target demo
 demo_EXTERNAL_OBJECTS =
 
-../bin/demo: CMakeFiles/demo.dir/src/ToneMap.cpp.o
+../bin/demo: CMakeFiles/demo.dir/src/Retina.cpp.o
 ../bin/demo: CMakeFiles/demo.dir/build.make
 ../bin/demo: /usr/local/lib/libopencv_superres.so.4.0.0
 ../bin/demo: /usr/local/lib/libopencv_stitching.so.4.0.0
@@ -144,7 +144,7 @@ CMakeFiles/demo.dir/build: ../bin/demo
 
 .PHONY : CMakeFiles/demo.dir/build
 
-CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/src/ToneMap.cpp.o.requires
+CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/src/Retina.cpp.o.requires
 
 .PHONY : CMakeFiles/demo.dir/requires
 

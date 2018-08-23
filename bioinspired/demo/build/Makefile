@@ -123,32 +123,32 @@ demo/fast:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
-src/ToneMap.o: src/ToneMap.cpp.o
+src/Retina.o: src/Retina.cpp.o
 
-.PHONY : src/ToneMap.o
+.PHONY : src/Retina.o
 
 # target to build an object file
-src/ToneMap.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/ToneMap.cpp.o
-.PHONY : src/ToneMap.cpp.o
+src/Retina.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/Retina.cpp.o
+.PHONY : src/Retina.cpp.o
 
-src/ToneMap.i: src/ToneMap.cpp.i
+src/Retina.i: src/Retina.cpp.i
 
-.PHONY : src/ToneMap.i
+.PHONY : src/Retina.i
 
 # target to preprocess a source file
-src/ToneMap.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/ToneMap.cpp.i
-.PHONY : src/ToneMap.cpp.i
+src/Retina.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/Retina.cpp.i
+.PHONY : src/Retina.cpp.i
 
-src/ToneMap.s: src/ToneMap.cpp.s
+src/Retina.s: src/Retina.cpp.s
 
-.PHONY : src/ToneMap.s
+.PHONY : src/Retina.s
 
 # target to generate assembly for a file
-src/ToneMap.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/ToneMap.cpp.s
-.PHONY : src/ToneMap.cpp.s
+src/Retina.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/Retina.cpp.s
+.PHONY : src/Retina.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... demo"
-	@echo "... src/ToneMap.o"
-	@echo "... src/ToneMap.i"
-	@echo "... src/ToneMap.s"
+	@echo "... src/Retina.o"
+	@echo "... src/Retina.i"
+	@echo "... src/Retina.s"
 .PHONY : help
 
 

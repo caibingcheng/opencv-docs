@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jerry/Documents/works/bioinspired/demo/src/ToneMap.cpp
+/home/jerry/Documents/works/bioinspired/demo/src/Retina.cpp
 iostream
 -
 cstring
@@ -21,8 +21,6 @@ opencv2/highgui.hpp
 /home/jerry/Documents/works/bioinspired/demo/src/opencv2/highgui.hpp
 opencv2/core/ocl.hpp
 /home/jerry/Documents/works/bioinspired/demo/src/opencv2/core/ocl.hpp
-opencv2/opencv.hpp
-/home/jerry/Documents/works/bioinspired/demo/src/opencv2/opencv.hpp
 
 /usr/local/include/opencv2/bioinspired.hpp
 opencv2/core.hpp

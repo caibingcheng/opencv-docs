@@ -64,14 +64,16 @@ int main(int argc, char *argv[])
 
     // if(parser.has("video"))
     // std::cout << parser.get<cv::String>("video") << std::endl;
-    if (parser.has("video"))
-        videoCapture.open("../../../statics/video1.avi");
-    else if (parser.has("image"))
-        inputFrame = cv::imread(parser.get<cv::String>("image"));
-    else
-        videoCapture.open(parser.get<int>("camera"));
+    // if (parser.has("video"))
+    //     videoCapture.open("../../../statics/video1.avi");
+    // else if (parser.has("image"))
+    // inputFrame = cv::imread("../../../statics/cat.jpg");
+    inputFrame = cv::imread("../../../statics/candle.png");
 
-    videoCapture >> inputFrame;
+    // else
+    //     videoCapture.open(parser.get<int>("camera"));
+
+    // videoCapture >> inputFrame;
 
     if (inputFrame.empty())
     {
@@ -86,44 +88,43 @@ int main(int argc, char *argv[])
         // create a retina instance with default parameters setup, uncomment the initialisation you wanna test
         cv::Ptr<cv::bioinspired::Retina> myRetina;
 
-        // if the last parameter is 'log', then activate log sampling (favour foveal vision and subsamples peripheral vision)
-        if (useLogSampling)
-        {
-            myRetina = cv::bioinspired::Retina::create(inputFrame.size(),
-                                                       true, 
-                                                       cv::bioinspired::RETINA_COLOR_BAYER, 
-                                                       true, 
-                                                       1, 
-                                                       0.1);
-        }
-        else // -> else allocate "classical" retina :
-            myRetina = cv::bioinspired::Retina::create(inputFrame.size());
+        // // if the last parameter is 'log', then activate log sampling (favour foveal vision and subsamples peripheral vision)
+        // if (useLogSampling)
+        // {
+        myRetina = cv::bioinspired::Retina::create(inputFrame.size(),
+                                                   true,
+                                                   cv::bioinspired::RETINA_COLOR_BAYER,
+                                                   true,
+                                                   1,
+                                                   1);
+        // }
+        // else // -> else allocate "classical" retina :
+        //     myRetina = cv::bioinspired::Retina::create(inputFrame.size());
 
         myRetina->activateContoursProcessing(true);
         myRetina->activateMovingContoursProcessing(true);
-        myRetina->setupIPLMagnoChannel(
-            true,
-            1.0f,
-            0.0f,
-            0.0f,
-            1.0f,
-            0.9f,
-            100.0f,
-            100.0f
-        );
-        myRetina->setupOPLandIPLParvoChannel(
-            true,
-            true,
-            0.0f,
-            0.0f,
-            0.1f,
-            0.0f,
-            0.0f,
-            10.0f,
-            1.0f
-        );
+        // myRetina->setupIPLMagnoChannel(
+        //     true,
+        //     10.0f,
+        //     10.0f,
+        //     10.0f,
+        //     10.0f,
+        //     100.0f,
+        //     100.0f,
+        //     1000.0f
+        // );
+        // myRetina->setupOPLandIPLParvoChannel(
+        //     true,
+        //     true,
+        //     0.0f,
+        //     0.0f,
+        //     0.0f,
+        //     0.0f,
+        //     100.0f,
+        //     0.9f,
+        //     0.7f);
 
-        myRetina->setColorSaturation(false, 100);
+        // myRetina->setColorSaturation(true, 0.9);
 
         // save default retina parameters file in order to let you see this and maybe modify it and reload using method "setup"
         // myRetina->write("RetinaDefaultParameters.xml");
@@ -139,13 +140,13 @@ int main(int argc, char *argv[])
         // processing loop with stop condition
         int64 totalTime = 0;
         int64 totalFrames = 0;
-        while (true)
+        // while (true)
         {
             // if using video stream, then, grabbing a new frame, else, input remains the same
-            if (videoCapture.isOpened())
-                videoCapture >> inputFrame;
-            if (inputFrame.empty())
-                break;
+            // if (videoCapture.isOpened())
+            //     videoCapture >> inputFrame;
+            // if (inputFrame.empty())
+            //     break;
 
             // cv::Mat saturation;
             // run retina filter
@@ -155,21 +156,23 @@ int main(int argc, char *argv[])
             frameTime = cv::getTickCount() - frameTime;
             totalTime += frameTime;
             totalFrames++;
-            myRetina->getParvo(retinaOutput_parvo);
-            myRetina->getMagno(retinaOutput_magno);
-            // cv::imshow("retina input", inputFrame);
-            cv::imshow("Retina Parvo", retinaOutput_parvo);
+            // myRetina->getParvo(retinaOutput_parvo);
+            // myRetina->getMagno(retinaOutput_magno);
+            cv::imshow("retina input", inputFrame);
+            // cv::imshow("Retina Parvo", retinaOutput_parvo);
             // cv::imshow("Retina Magno", retinaOutput_magno);
 
-            // cv::Mat toneMap;
-            // myRetina->applyFastToneMapping(inputFrame, toneMap);
+            cv::Mat toneMap;
+            myRetina->applyFastToneMapping(inputFrame, toneMap);
             // cv::Mat test = toneMap - inputFrame;
-            // cv::imshow("Tone Map", toneMap);
+            cv::imshow("Tone Map", toneMap);
             // cv::imshow("test", test);
-
-            int key = cv::waitKey(5);
-            if (key == 'q')
-                break;
+            // cv::waitKey(0);
+            char key = 0;
+            do
+            {
+                key = cv::waitKey(0);
+            } while (27 != key);
         }
         std::cout << "\nMean frame processing time: " << (totalTime / cv::getTickFrequency()) / totalFrames << " s" << std::endl;
         std::cout << "Retina demo end" << std::endl;
